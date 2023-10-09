@@ -1,0 +1,67 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #eaeaea;
+}
+
+.setup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.navigation {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.token-board {
+    display: flex;
+    flex-wrap: wrap; /* To wrap the stars if they exceed the screen width */
+    gap: 10px;
+    justify-content: center;
+}
+
+.star {
+    width: 50px;
+    height: 50px;
+    background-color: gray;
+    clip-path: polygon(
+        50% 0%,
+        61% 35%,
+        98% 35%,
+        68% 57%,
+        79% 91%,
+        50% 70%,
+        21% 91%,
+        32% 57%,
+        2% 35%,
+        39% 35%
+    );
+    cursor: pointer;
+    display: inline-block;
+}
+
+.star.active {
+    background-color: yellow;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.star.final-star {
+    animation: pulse 1s infinite;
+}
